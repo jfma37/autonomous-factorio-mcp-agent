@@ -50,9 +50,14 @@ updated: 2026-11-25
 - [x] GREEN PACKS AUTOMATED to lab2: green out belt (22.5,56.5)->(26.5,56.5)->north x=26.5->(26.5,39.5); inserter (25.5,39.5)->chest (24.5,39.5)->ins (23.5,39.5)->lab2. Lab3 (21.5,43.5) chained from lab2 by inserter (21.5,41.5). Lab1 (9.5,35.5) still hand-fed green (chest (9.5,38.5)).
 - [x] Engine researched; fluid-handling in progress (50+50) -> then oil-processing (raw strings). advanced-material-processing (75) queued after.
 - [x] FURNACE COAL AUTOMATED: coal drill (36.5,-89.5) -> belt y=-89.5 west to x=-17.5 -> south to y=-74.5 -> west along y=-74.5 (copper row) to x=-38.5 -> south x=-38.5 to y=-50.5 -> east along y=-50.5 (iron row) to x=-4.5. Fuel inserters (UP) at furnace x-0.5 (y=-75.5 copper, y=-51.5 iron). Spare coal drill (36.5,-95.5) idle (belt not built).
-- [x] PLATE BELTS: long-handed inserters (replace old output inserters) drop plates 2 tiles away: iron on y=-49.5 (x -20.5..-2.5) -> south x=-2.5 -> depot y=21.5; copper on y=-73.5 east to x=8.5 -> south x=8.5 -> depot y=21.5. Depots: 5 inserters + 5 chests each around (-2.5,21.5) iron and (8.5,21.5) copper (+ pole (-1.5,22.5),(9.5?)). Chests ~(-2.5,23.5),(8.5,23.5) etc. Hand-carry from depot to science chests is now ~20 tiles.
-- [~] fluid-handling done; advanced-material-processing running; oil-processing needs "oil-gathering"? (name unknown; "oil-processing" failed to start). Crude oil nearest: (-280.5,-313.5) (~420 tiles from base).
-- [ ] Remaining: belt plates from depots into science chests (chest-feeding), lab1 green by hand, assembler2 upgrade, steel furnaces after research
+- [x] PLATE BELTS: long-handed inserters drop plates on y=-49.5 (iron) / y=-73.5 (copper) -> trunks x=-2.5 / x=8.5 south.
+- [x] MIXED SCIENCE BUS (Fe one lane, Cu other): iron trunk east along y=22.5 -> (8.5,22.5) merges with copper (side-load from (9.5,22.5)) -> underground (8.5,23.5)->(8.5,25.5) under coal belt -> south x=8.5 to y=32.5 -> east y=32.5 to x=20.5 -> south to y=37.5 -> east to x=28.5 -> south to y=46.5 -> west (underground (27.5,46.5)->(25.5,46.5) under green belt x=26.5) along y=46.5 to x=11.5 -> south x=11.5 to y=56.5 -> east to (18.5,56.5). Old input chests removed; inserters pick straight from the belt. Only red2 copper chest (14.5,39.5) still hand-fed (holds 2541 Cu).
+- [x] STEEL: 2 stone furnaces (11,30),(15,30) fed iron by inserters from bus row y=32.5, coal from chests (13.5,30),(17.5,30) (200 coal each, refill occasionally), steel out to chests (10.5,27.5),(14.5,27.5).
+- [x] Lab1 retired (picked up); lab4 (17.5,43.5) chained from lab3 via inserter (19.5,43.5). Labs 2,3,4 all fed by green belt + red asm2.
+- [x] Assembler2 upgrade: green pack asm (22.5,53.5) and red asm2 (17.5,39.5) are now assembling-machine-2 (needs steel). 
+- [x] Spare coal drill removed. Test undergrounds picked up.
+- [~] Research: oil-gathering (100+100) running, then "oil-processing" (fails to start until oil-gathering done), then plastics/sulfur/chemical science; electric-energy-distribution-1, logistics-2 next. Crude oil at (-280.5,-313.5) ~420 tiles NW.
+- [ ] Next (Phase 8): oil outpost + pipeline/train-free transport (barrel? use long pipe ~420 tiles or build refinery at oil), steel furnaces (6 steel+10 brick each) replacing stone furnaces to remove the drill/furnace imbalance, more assembler2 science copies toward 45 SPM, red asm1 (13.5,35.5) is idle (no lab).
 - Hand chores left: refill 5 green-block input chests (plates), red chests, furnace coal.
 
 ## Later

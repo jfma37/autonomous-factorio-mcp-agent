@@ -66,6 +66,14 @@ Checkpoints: `bootstrap-burner-mining`, `copper-iron-lines-v1`, `power-lab-autom
 - Long-handed inserter trick: coal belt on the near row (y=-50.5 / -74.5), plate belt one row further (y=-49.5 / -73.5).
 - Crude oil at (-280.5,-313.5). Checkpoint `phase6-plates-coal-done`.
 
+## Phase 7 (science bus, steel, labs)
+- Mixed bus path listed in TODO Phase 6/7. Sideload merge at (8.5,22.5): Fe from west (7.5,22.5), Cu from east (9.5,22.5): one plate per lane; both lanes saturated to end (18.5,56.5).
+- Underground belts WORK if placed opposite and rotated: place_entity(UndergroundBelt, direction=OPPOSITE) at exit tile, then rotate_entity(e, wanted_direction) -> output, is_input False. Entrance: place with flow direction.
+- connect_entities(belt) sometimes errors on get_entities near existing groups; manual per-tile place_entity loop is reliable.
+- asm2 recipe needs steel; steel furnaces at (11,30),(15,30); steel chests (10.5,27.5),(14.5,27.5).
+- Tech names: oil-gathering (pumpjack), oil-processing (chem plant/refinery, fails until prereq done), electric-energy-distribution-1, logistics-2. enabled-flag unreliable, test with craft_item.
+- Lab1 removed, lab4 added. Checkpoint `phase7-bus-steel-labs`.
+
 ## Phase 5 findings
 - Water/trees limit building south of y~55 near x -10..28: check `can_place_entity` for all machines/chests before committing to a layout. `render` returned a blank grid (not useful).
 - Boiler orientation: place with `direction=Direction.DOWN` to flip steam output; I fed 2nd engine by hand-laid pipes at y=47.5. Engines can sit side-by-side if pipes bridge top ports.

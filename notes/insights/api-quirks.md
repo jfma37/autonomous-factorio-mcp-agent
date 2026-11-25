@@ -19,3 +19,9 @@ title: API quirks
 - `render` returned a blank grid in this setup; use get_entities for layout checks.
 - FLE source (read-only reference): `.venv/Lib/site-packages/fle/env/` (tools/agent/*/server.lua, game_types.py).
 - `connect_entities(Position, Position, SmallElectricPole)` can lay a ~100-tile pole line in one call (used 26 poles).
+- **Underground belts:** place_entity makes an entrance (is_input True). For the exit: place with the OPPOSITE direction, then `rotate_entity(e, wanted_dir)` -> is_input False, flows correctly (tested).
+- `connect_entities` for belts: start one tile beyond the existing end; near existing groups it may raise GetEntities errors -> use a per-tile place_entity loop.
+- Long-handed inserter: reach 2 both ways; lets coal belt (row 1) and plate belt (row 2) run in parallel beside furnaces.
+- Mixed bus: belt side-loaded from both sides gives one item per lane; inserters pick only what the target machine needs, so no chests required.
+- Tech names: `oil-gathering`, `oil-processing` (prereq), `electric-energy-distribution-1`, `logistics-2`.
+- Assembler2 needs steel plates (craft gears/circuits first).
