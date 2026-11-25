@@ -74,6 +74,17 @@ Checkpoints: `bootstrap-burner-mining`, `copper-iron-lines-v1`, `power-lab-autom
 - Tech names: oil-gathering (pumpjack), oil-processing (chem plant/refinery, fails until prereq done), electric-energy-distribution-1, logistics-2. enabled-flag unreliable, test with craft_item.
 - Lab1 removed, lab4 added. Checkpoint `phase7-bus-steel-labs`.
 
+## Phase 8 (steel furnaces, pipe asm, oil)
+| Steel furnaces | 12 ore furnaces replaced (iron y=-53, copper y=-77) | drill-limited 0.5/s each |
+| Pipe asm | asm1 (13.5,35.5) recipe pipe, chest (10.5,35.5) | takes Fe from bus y=32.5 |
+| Oil outpost | pumpjack (-280.5,-313.5), tank (-274.5,-316.5), poles from (-35.5,-77.5) | |
+| Crude pipeline | ~620 pipes, ends (-22.5,0.5)->refinery in (-22.5,-1.5) | passes x=-51.5 west of all belts |
+| Refinery | (-23.5,-4.5) basic-oil-processing; petroleum out (-21.5,-7.5) -> tank (-19.5,-10.5) | poles (-26.5,1.5),(-26.5,-3.5) |
+- oil-processing is a research_trigger tech (mine crude oil). Chemical plants x2 + steel in inventory, plastics research (200+200) running.
+- Long connect_entities calls (>40 pipes/poles) time out client-side but keep running; call reconnect, wait ~60s (`timeout 55 tail -f /dev/null` in Bash), then re-query. While busy, inventory reads return empty/0 - ignore.
+- get_entities({Prototype.OilRefinery}) returns nothing; use get_entities(position=..., radius=..) or get_entity.
+- Checkpoint `phase8-oil-refinery`.
+
 ## Phase 5 findings
 - Water/trees limit building south of y~55 near x -10..28: check `can_place_entity` for all machines/chests before committing to a layout. `render` returned a blank grid (not useful).
 - Boiler orientation: place with `direction=Direction.DOWN` to flip steam output; I fed 2nd engine by hand-laid pipes at y=47.5. Engines can sit side-by-side if pipes bridge top ports.

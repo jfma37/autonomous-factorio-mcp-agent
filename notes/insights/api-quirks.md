@@ -25,3 +25,6 @@ title: API quirks
 - Mixed bus: belt side-loaded from both sides gives one item per lane; inserters pick only what the target machine needs, so no chests required.
 - Tech names: `oil-gathering`, `oil-processing` (prereq), `electric-energy-distribution-1`, `logistics-2`.
 - Assembler2 needs steel plates (craft gears/circuits first).
+- **Research triggers:** `oil-processing` has research_trigger mine-entity crude-oil: place a pumpjack on oil (set_research fails until then). Check tech prereqs in the container: `docker exec <container> sh -c "grep -A12 'name = \"X\"' /opt/factorio/data/base/prototypes/technology.lua"`.
+- Long connect_entities (>40 pieces) -> client timeout "busy"; work continues server side. reconnect + wait ~60s, then verify with get_entities.
+- Refinery/oil entities: `get_entities({Prototype.OilRefinery}, ...)` returns nothing; use get_entities(position, radius) or get_entity. Refinery has input_connection_points/output_connection_points.
