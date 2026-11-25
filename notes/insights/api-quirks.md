@@ -1,0 +1,21 @@
+---
+title: API quirks
+---
+
+- Call `reconnect()` if `fle://status` reports failure.
+- Must `move_to` before harvest/place/insert.
+- `nearest()` searches 500 tiles from player position (relative to player!).
+- Always reassign entity after `insert_item`.
+- Inserter `Direction` = drop direction (LEFT: picks east tile, drops west tile).
+- `get_prototype_recipe(...).enabled` is NOT reliable (showed False for unlocked belts). Test with craft_item instead.
+- **Technology enum is incomplete.** `set_research` also accepts a raw string: `set_research("electric-mining-drill")` works. Electric mining drill is locked behind its own tech (25 red packs) in this 2.0 setup.
+- `set_research` while another research is active just switches (progress is kept by the game).
+- `get_entity(Lab)` can throw AttributeError when lab inventory is empty.
+- `craft_item(Lab)` may fail on missing gears: craft gears/belts/circuits first.
+- Labs with an empty inventory cannot be fetched (`get_entity(Prototype.Lab, ...)` -> AttributeError 'list' has no 'items'; `get_entities` silently drops them). Workaround: feed science with chest + inserter beside the lab instead of `insert_item`.
+- `insert_item` into a fuel slot (boiler/furnace) caps at one stack (~50 coal): the rest is silently not inserted. Use chest + inserter for boilers.
+- Tech chain gotchas: `fluid-handling` needs `engine` first; `set_research` returns "Failed to start research for X" when prerequisites are missing.
+- Place assemblers: verify with `can_place_entity` for every machine/chest first; water/trees are south of y~55 near x -10..28.
+- `render` returned a blank grid in this setup; use get_entities for layout checks.
+- FLE source (read-only reference): `.venv/Lib/site-packages/fle/env/` (tools/agent/*/server.lua, game_types.py).
+- `connect_entities(Position, Position, SmallElectricPole)` can lay a ~100-tile pole line in one call (used 26 poles).

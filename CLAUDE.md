@@ -1351,3 +1351,35 @@ REMEMBER:
 - Reading documentation BEFORE coding will make you successful
 - Your workspace is your memory - keep it organized and current
 - Execute Python directly with `execute()`, don't save .py files
+
+## CUSTOM SERVER & MOD RULES (MANDATORY)
+
+### Game Version & Active Mods
+- **Base Game:** Factorio 2.0 Vanilla ONLY. **Space Age DLC (`space-age`), `elevated-rails`, and `quality` are DISABLED.**
+  - NEVER plan for or attempt to craft Space Age planets, space platforms, thrusters, elevated rails, or quality modules/rarities.
+  - **Ultimate Endgame Goal:** Build and launch a standard Vanilla Rocket Silo with a Satellite.
+- **Mod 1 — `enable-all-feature-flags` (ACTIVE):**
+  - Factorio 2.0 engine features are unlocked in vanilla: **belt stacking** (up to 4 items high via stack inserters) and **Fluid System 2.0** (merged pipe networks without fluid throughput limits).
+  - Account for stacked belt throughput (e.g., stacked yellow belt = 60 items/s instead of 15 items/s) when scaling mid/late-game lines.
+- **Mod 2 — `sonaxaton-infinite-resources` (ACTIVE):**
+  - All ore patches and oil wells are infinite and never deplete. NEVER spend turns building ore-depletion alerts or outpost relocation systems.
+- **Mod 3 — `squeak-through-2` (ACTIVE):**
+  - Entity hitboxes are reduced so your character can walk cleanly between adjacent pipes, miners, solar panels, and boilers.
+- **Peaceful World Settings:** Enemies, enemy bases, pollution, evolution, and cliffs are ALL DISABLED (`peaceful_mode: true`, `richness: 0` cliffs). Do NOT spend time or resources building walls, turrets, radars, or military defenses.
+
+### Claude Pro Token Conservation (CRITICAL)
+- **Keep radius queries small:** When calling `fle://entities/{center_x}/{center_y}/{radius}`, NEVER use a radius larger than `40` unless specifically searching for oil/uranium far away. Large radius queries dump massive JSON payloads that exhaust context tokens immediately.
+- **Read only needed API manuals:** When initializing, read the essential tool manuals (`execute`, `commit`, `restore`, `undo`) concisely without dumping huge text blocks into `log.md`.
+- **Milestone-based sessions:** Update `log.md` and `TODO.md` every 10–15 `execute()` calls with exact coordinates of every factory section so we can safely reset context between milestones.
+
+### Pro Engineering & Ratio Standards (MANDATORY)
+- **Reference Sheet:** Before designing any new factory block, consult `references/pro_ratios.md` for exact machine ratios and belt saturation math.
+- **Target Scale:** Design all science production around **45 SPM** (5 Red, 6 Green, 12 Blue, 7 Purple, 7 Yellow Assembler 2s feeding 12–15 chain-linked Labs). Skip Military (Black) science entirely since enemies are disabled.
+- **Mandatory Core Ratios:**
+  - **Steam Power:** Scale in exact `1 Offshore Pump : 20 Boilers : 40 Steam Engines` (36 MW) blocks.
+  - **Smelting:** Build half-columns of `24 furnaces` (7.5/s, half yellow belt) or full columns of `48 furnaces` (15/s stone / 30/s steel, full belt).
+  - **Green Circuits:** Always build in exact `3 Copper Cable : 2 Electronic Circuit` direct-insertion or ratio blocks.
+  - **Red Circuits:** Build in `1 Copper Cable : 6 Advanced Circuit` blocks (1 Plastic chemical plant per 12 Red Circuit assemblers).
+  - **Advanced Oil:** Build in `8 Refineries : 2 Heavy->Light : 7 Light->Petroleum` ratios with circuit-controlled cracking pumps.
+  - **Rocket Silo:** Always equip the Rocket Silo with `4x productivity-module-3` before launching to cut rocket part costs by ~28%.
+- **Main Bus & Belt Stacking:** Leave a **2-tile gap** between every 4-belt bus group for underground belts. Once stack inserters are unlocked (`enable-all-feature-flags`), stack bus lanes up to 4 items high (`60 items/s` on yellow belts) instead of adding duplicate parallel belts.
