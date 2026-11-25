@@ -45,12 +45,15 @@ updated: 2026-11-25
 - [ ] GAP power: 3.6MW ok (1 boiler:2 engines). Hand-fed coal chests: 554 + 385 coal ~ <15 min at full load. Coal needs electric drills + belt.
 - [ ] GAP logistics: zero belts; every plate/pack hand-carried. Phase 6 priority 1.
 
-## Phase 6 - Logistics overhaul (NEXT)
-- [ ] Hand chores now: (1) carry green packs from (22.5,56.5) to lab chests (9.5,38.5) & (24.5,39.5); (2) refill 5 green-block input chests with plates; (3) refill science red chests; (4) refill boiler coal chests (-5.5,39.5),(-5.5,43.5); (5) refuel 12 ore furnaces
-- [ ] Biggest win: coal automation (electric drills on coal + belt to boilers ~120 tiles, or move boilers; solid fuel later) and belts of plates ore->base (~100 tiles)
-- [ ] Unified science: belt red+green to a lab row (labs can't be read by get_entity when empty - use chest+inserter feeding)
-- [ ] Steel production (steel-processing done), research module/oil path: oil-processing, plastics, sulfur, blue science
-- [ ] Find crude oil (use nearest(Resource.CrudeOil))
+## Phase 6 - Logistics overhaul (IN PROGRESS)
+- [x] COAL AUTOMATED: 4 e-drills (42.5/46.5, -95.5/-92.5) -> belt x=44.5 south to y=24.5 -> west y=24.5 to x=4.5 -> south x=4.5 to y=55.5 -> west y=55.5 -> (-6.5,55.5)-(-6.5,54.5)-(-7.5,54.5) -> north x=-7.5 to y=39.5; inserters (-6.5,39.5),(-6.5,43.5) feed boiler chests. ~230 belts. Poles (44.5,-97.5),(40.5,-94),(48.5,-94) + 17-pole line from (6.5,-57.5).
+- [x] GREEN PACKS AUTOMATED to lab2: green out belt (22.5,56.5)->(26.5,56.5)->north x=26.5->(26.5,39.5); inserter (25.5,39.5)->chest (24.5,39.5)->ins (23.5,39.5)->lab2. Lab3 (21.5,43.5) chained from lab2 by inserter (21.5,41.5). Lab1 (9.5,35.5) still hand-fed green (chest (9.5,38.5)).
+- [x] Engine researched; fluid-handling in progress (50+50) -> then oil-processing (raw strings). advanced-material-processing (75) queued after.
+- [ ] Spare coal on belt: add coal inserters to the 12 ore furnaces (still hand-fueled!) - needs coal belt branch to ore field (coal belt passes x=44.5, ore at x -37..-4: ~50 tiles west)
+- [ ] Plate belts ore->base (~100 tiles), replace chests-by-hand; iron/copper into science chests
+- [ ] Retire lab1 or belt-feed it; unified science belt; upgrade to assembler2
+- [ ] Steel production, oil path: oil-processing, plastics, sulfur, blue science; find crude oil (nearest(Resource.CrudeOil))
+- Hand chores left: refill 5 green-block input chests (plates), red chests, furnace coal.
 
 ## Later
 - Electric drills, belts, green/red science, oil, rocket silo.

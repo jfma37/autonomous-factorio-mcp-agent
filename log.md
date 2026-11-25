@@ -48,6 +48,17 @@ Checkpoints: `bootstrap-burner-mining`, `copper-iron-lines-v1`, `power-lab-autom
 - Power ok per ratio; coal supply is the weak link (hand-fed).
 - Checkpoint: `audit-refill-v1`.
 
+## Phase 6 progress (coal + green belts)
+| Coal mine | 4 e-drills (42.5,-95.5),(42.5,-92.5) facing R; (46.5,-95.5),(46.5,-92.5) facing L; drop on belt x=44.5. Poles (40.5,-94),(44.5,-97.5),(48.5,-94) + line from (6.5,-57.5) | ~2 coal/s |
+| Coal belt | x=44.5 y -96.5..24.5; y=24.5 x 44.5..4.5; x=4.5 y 24.5..55.5; y=55.5 x 4.5..-6.5; (-6.5,54.5),(-7.5,54.5); x=-7.5 y 54.5..39.5 | inserters (-6.5,39.5),(-6.5,43.5) RIGHT into boiler chests |
+| Green belt | (22.5,56.5)->(26.5,56.5)->x=26.5 north->(26.5,39.5); ins (25.5,39.5) -> chest (24.5,39.5) -> lab2; lab3 (21.5,43.5) via ins (21.5,41.5) | |
+
+- connect_entities belts: start one tile BEYOND the existing end (start==end tile returns the old group, places nothing). Pathfinder staircases around poles: use straight y/x lanes away from poles.
+- Underground belts: place_entity makes unpaired entrances; use connect_entities(a,b,{TransportBelt,UndergroundBelt}) - didn't work for me across pipes; rerouted around instead.
+- Trees block belts: harvest with nearest(Resource.Wood) (gave 32 wood = poles).
+- Switching set_research drains packs into the other tech; do not flip research needlessly.
+- Checkpoints: `phase6-coal-green-belts`.
+
 ## Phase 5 findings
 - Water/trees limit building south of y~55 near x -10..28: check `can_place_entity` for all machines/chests before committing to a layout. `render` returned a blank grid (not useful).
 - Boiler orientation: place with `direction=Direction.DOWN` to flip steam output; I fed 2nd engine by hand-laid pipes at y=47.5. Engines can sit side-by-side if pipes bridge top ports.
