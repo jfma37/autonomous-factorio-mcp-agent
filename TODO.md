@@ -62,7 +62,9 @@ updated: 2026-11-25
 ## Phase 8 - Oil (IN PROGRESS)
 - [x] oil-gathering researched; **oil-processing is a research_trigger tech** (mine crude-oil): placing a pumpjack on the oil triggered it. set_research("oil-processing") fails until then.
 - [x] Pole line (small poles) from copper row (-35.5,-77.5) to oil (~100 poles) ; pumpjack (-280.5,-313.5) + storage tank (-274.5,-316.5); crude flows.
-- [~] Crude pipeline: pipes from tank NE side (-276.5,-318.5) -> (-230,-285) -> (-160,-215) -> (-105,-165) -> (-52.5,-115.5) -> next: down x=-51.5 to y~0 then east to oil park at ~(-30,0) (west of iron trunk x=-2.5, no belt crossings). connect_entities of >40 pipes times out (call continues server-side; reconnect, then check with get_entities).
+- [x] Crude pipeline DONE: (-276.5,-318.5)->(-230,-285)->(-160,-215)->(-105,-165)->(-52.5,-115.5)->x=-51.5 south->(-51.5,0.5)->east y=0.5 to (-22.5,0.5)->refinery input (-22.5,-1.5). ~620 pipes. Manual pipe loop (place_entity per tile, move every 8) is faster/more reliable than connect_entities for straight runs.
+- [x] Refinery (-23.5,-4.5) basic-oil-processing WORKING (power from pole line (-1.5,24.5)->(-26.5,1.5)->(-26.5,-3.5)). Output port petroleum (-21.5,-7.5) -> pipes (-21.5,-7.5),(-21.5,-8.5); tank (-19.5,-10.5) planned.
+- [~] Research: plastics (200+200) running; then sulfur-processing, chemical-science-pack (name), advanced circuits.
 - [ ] Oil park: refinery (basic oil processing), chemical plants (plastic needs coal), sulfur (needs water), then research plastics/sulfur-processing/chemical-science-pack, engine-unit assembler, blue science.
 - [ ] electric-energy-distribution-1 (research running) / logistics-2 after.
 - Hand chores left: refill 5 green-block input chests (plates), red chests, furnace coal.
