@@ -49,10 +49,10 @@ updated: 2026-11-25
 - [x] COAL AUTOMATED: 4 e-drills (42.5/46.5, -95.5/-92.5) -> belt x=44.5 south to y=24.5 -> west y=24.5 to x=4.5 -> south x=4.5 to y=55.5 -> west y=55.5 -> (-6.5,55.5)-(-6.5,54.5)-(-7.5,54.5) -> north x=-7.5 to y=39.5; inserters (-6.5,39.5),(-6.5,43.5) feed boiler chests. ~230 belts. Poles (44.5,-97.5),(40.5,-94),(48.5,-94) + 17-pole line from (6.5,-57.5).
 - [x] GREEN PACKS AUTOMATED to lab2: green out belt (22.5,56.5)->(26.5,56.5)->north x=26.5->(26.5,39.5); inserter (25.5,39.5)->chest (24.5,39.5)->ins (23.5,39.5)->lab2. Lab3 (21.5,43.5) chained from lab2 by inserter (21.5,41.5). Lab1 (9.5,35.5) still hand-fed green (chest (9.5,38.5)).
 - [x] Engine researched; fluid-handling in progress (50+50) -> then oil-processing (raw strings). advanced-material-processing (75) queued after.
-- [ ] Spare coal on belt: add coal inserters to the 12 ore furnaces (still hand-fueled!) - needs coal belt branch to ore field (coal belt passes x=44.5, ore at x -37..-4: ~50 tiles west)
-- [ ] Plate belts ore->base (~100 tiles), replace chests-by-hand; iron/copper into science chests
-- [ ] Retire lab1 or belt-feed it; unified science belt; upgrade to assembler2
-- [ ] Steel production, oil path: oil-processing, plastics, sulfur, blue science; find crude oil (nearest(Resource.CrudeOil))
+- [x] FURNACE COAL AUTOMATED: coal drill (36.5,-89.5) -> belt y=-89.5 west to x=-17.5 -> south to y=-74.5 -> west along y=-74.5 (copper row) to x=-38.5 -> south x=-38.5 to y=-50.5 -> east along y=-50.5 (iron row) to x=-4.5. Fuel inserters (UP) at furnace x-0.5 (y=-75.5 copper, y=-51.5 iron). Spare coal drill (36.5,-95.5) idle (belt not built).
+- [x] PLATE BELTS: long-handed inserters (replace old output inserters) drop plates 2 tiles away: iron on y=-49.5 (x -20.5..-2.5) -> south x=-2.5 -> depot y=21.5; copper on y=-73.5 east to x=8.5 -> south x=8.5 -> depot y=21.5. Depots: 5 inserters + 5 chests each around (-2.5,21.5) iron and (8.5,21.5) copper (+ pole (-1.5,22.5),(9.5?)). Chests ~(-2.5,23.5),(8.5,23.5) etc. Hand-carry from depot to science chests is now ~20 tiles.
+- [~] fluid-handling done; advanced-material-processing running; oil-processing needs "oil-gathering"? (name unknown; "oil-processing" failed to start). Crude oil nearest: (-280.5,-313.5) (~420 tiles from base).
+- [ ] Remaining: belt plates from depots into science chests (chest-feeding), lab1 green by hand, assembler2 upgrade, steel furnaces after research
 - Hand chores left: refill 5 green-block input chests (plates), red chests, furnace coal.
 
 ## Later

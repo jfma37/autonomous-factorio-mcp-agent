@@ -59,6 +59,13 @@ Checkpoints: `bootstrap-burner-mining`, `copper-iron-lines-v1`, `power-lab-autom
 - Switching set_research drains packs into the other tech; do not flip research needlessly.
 - Checkpoints: `phase6-coal-green-belts`.
 
+## Phase 6 part 2 (furnace coal + plate belts)
+| Furnace coal | drill (36.5,-89.5) LEFT -> y=-89.5 west to (-17.5) -> x=-17.5 south -> y=-74.5 west to -38.5 -> x=-38.5 south -> y=-50.5 east to -4.5 | fuel inserters UP at x_f-0.5 |
+| Iron plates | long inserters (x_f+0.5, -51.5) drop (x,-49.5); belt y=-49.5 east -> x=-2.5 south -> depot (-2.5,21.5) | chests (-2.5,23.5),(-4.5/-0.5, 20.5/21.5) |
+| Copper plates | long inserters (x_f+0.5,-75.5) drop (x,-73.5); belt y=-73.5 east -> x=8.5 south -> depot (8.5,21.5) | chests (8.5,23.5),(6.5/10.5,20.5/21.5) |
+- Long-handed inserter trick: coal belt on the near row (y=-50.5 / -74.5), plate belt one row further (y=-49.5 / -73.5).
+- Crude oil at (-280.5,-313.5). Checkpoint `phase6-plates-coal-done`.
+
 ## Phase 5 findings
 - Water/trees limit building south of y~55 near x -10..28: check `can_place_entity` for all machines/chests before committing to a layout. `render` returned a blank grid (not useful).
 - Boiler orientation: place with `direction=Direction.DOWN` to flip steam output; I fed 2nd engine by hand-laid pipes at y=47.5. Engines can sit side-by-side if pipes bridge top ports.
