@@ -56,8 +56,15 @@ updated: 2026-11-25
 - [x] Lab1 retired (picked up); lab4 (17.5,43.5) chained from lab3 via inserter (19.5,43.5). Labs 2,3,4 all fed by green belt + red asm2.
 - [x] Assembler2 upgrade: green pack asm (22.5,53.5) and red asm2 (17.5,39.5) are now assembling-machine-2 (needs steel). 
 - [x] Spare coal drill removed. Test undergrounds picked up.
-- [~] Research: oil-gathering (100+100) running, then "oil-processing" (fails to start until oil-gathering done), then plastics/sulfur/chemical science; electric-energy-distribution-1, logistics-2 next. Crude oil at (-280.5,-313.5) ~420 tiles NW.
-- [ ] Next (Phase 8): oil outpost + pipeline/train-free transport (barrel? use long pipe ~420 tiles or build refinery at oil), steel furnaces (6 steel+10 brick each) replacing stone furnaces to remove the drill/furnace imbalance, more assembler2 science copies toward 45 SPM, red asm1 (13.5,35.5) is idle (no lab).
+- [x] Idle red asm (13.5,35.5) repurposed -> PIPE assembler (recipe pipe, iron from bus row y=32.5 via ins (13.5,33.5), output ins (11.5,35.5) -> chest (10.5,35.5)). Collect pipes; remove inserter (13.5,33.5) if it hogs iron.
+- [x] Furnace imbalance FIXED: all 12 ore furnaces are steel furnaces (iron y=-53 x=-20..-5, copper y=-77 x=-37..-22); output now drill-limited 0.5/s each. 12 stone furnaces recovered in inventory; 4 brick furnaces at (10/13/16/22,16).
+
+## Phase 8 - Oil (IN PROGRESS)
+- [x] oil-gathering researched; **oil-processing is a research_trigger tech** (mine crude-oil): placing a pumpjack on the oil triggered it. set_research("oil-processing") fails until then.
+- [x] Pole line (small poles) from copper row (-35.5,-77.5) to oil (~100 poles) ; pumpjack (-280.5,-313.5) + storage tank (-274.5,-316.5); crude flows.
+- [~] Crude pipeline: pipes from tank NE side (-276.5,-318.5) -> (-230,-285) -> (-160,-215) -> (-105,-165) -> (-52.5,-115.5) -> next: down x=-51.5 to y~0 then east to oil park at ~(-30,0) (west of iron trunk x=-2.5, no belt crossings). connect_entities of >40 pipes times out (call continues server-side; reconnect, then check with get_entities).
+- [ ] Oil park: refinery (basic oil processing), chemical plants (plastic needs coal), sulfur (needs water), then research plastics/sulfur-processing/chemical-science-pack, engine-unit assembler, blue science.
+- [ ] electric-energy-distribution-1 (research running) / logistics-2 after.
 - Hand chores left: refill 5 green-block input chests (plates), red chests, furnace coal.
 
 ## Later
