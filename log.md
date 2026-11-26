@@ -128,6 +128,15 @@ pipes (2.5/9.5/16.5, 27.5); poles y=21.5 incl. x=16.5, 23.5. Room for 20 boilers
 Not yet in mall: underground belt, splitter, fast inserter, AM2, poles (steel needed for AM2).
 **Research**: fast-inserter done; now `engine` (fluid-handling failed to start).
 
+# 2026-11-26 - Session 6: Steel line (FLE tag `run2_steel`)
+- Iron tap: inserters (-26.5,-20.5/-21.5) from iron belt x=-27.5 onto x=-25.5 north, then y=-22.5 east
+  (underground x=-23.5/-21.5) to x=-4.5.
+- Coal: inserter (13.5,-23.5) from coal belt, belt y=-23.5 west to -18.5, side-loads the steel input belt.
+- 4 stone furnaces y=-20, x=-14,-11,-8,-5; output belt y=-17.5 east -> chest (0.5,-17.5).
+- Chest prefilled with 700 coal: caps at 200 steel (reached; 20 withdrawn).
+- Research: engine done; fluid-handling started (it succeeded this time). AM2 craft verified (1 in inventory).
+- Mall belt chest down by 60; inserter chest by 5.
+
 ## Manual maintenance (until electric inserters)
 - 30 output-side burner inserters (rows at y=-36.5 / -25.5, plus chest inserters) cannot refuel from plates.
   Loaded with ~25-30 coal each; refill about every 20 min of game time.

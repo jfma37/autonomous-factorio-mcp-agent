@@ -12,7 +12,9 @@ title: TODO - Vanilla 2.0 Rocket Launch (target 45 SPM, see references/pro_ratio
   - [ ] Check underground belt pairs after any restore
 - [x] Power expanded to 8 boilers / 16 engines
 - [~] Starter mall v1: belt, inserter, gear, pipe
-  - [ ] Add underground belt, splitter, fast inserter, poles; AM2 after steel furnaces
+  - [ ] Add underground belt, splitter, fast inserter, poles, AM2 assembler
+- [x] Steel line: 4 furnaces, 200-plate chest
+- [ ] Before oil/blue: expand iron and copper furnaces (24 each), more iron drills
 - [ ] Phase 4: extend furnace columns to 24+ (room westward needs copper ore belt moved from x=-31.5)
 - [ ] Phase 5: Starter Mall (before blue science)
 - [ ] Phase 6: green science, oil, blue/purple/yellow science (45 SPM)
