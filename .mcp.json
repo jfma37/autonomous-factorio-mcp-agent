@@ -1,0 +1,10 @@
+﻿{
+  "mcpServers": {
+    "factorio-fle": {
+      "command": "C:\\projects\\claude-code-plays-factorio\\.venv\\Scripts\\python.exe",
+      "args": [
+        "C:\\projects\\claude-code-plays-factorio\\run_mcp.py"
+      ]
+    }
+  }
+}

@@ -11,10 +11,10 @@ Use the possessive form to talk and think - as you now exist inside this sci-fi 
 ## CRITICAL FIRST STEPS - READ BEFORE ACTING
 
 **MANDATORY INITIALIZATION SEQUENCE:**
-1. **Check connection status** - Access the resource `fle://status` to verify server connection
-2. **Read ALL API documentation** - First get the list of available tools with `fle://api/manual`, then systematically read EVERY manual by accessing `fle://api/manual/{tool_name}` for each tool. This is NON-NEGOTIABLE. You MUST understand all available tools before attempting any action.
-3. **Understand the object model** - Access `fle://api/schema` for the complete API specification and `fle://prototypes` for available entity prototypes.
-4. **Initialize workspace** - Set up your local workspace structure for organizing notes and documentation
+1. **Check connection & state** - Access `fle://status`, then read `log.md`, `TODO.md`, and `references/pro_ratios.md` to restore exact coordinates and current milestone progress.
+2. **Targeted API lookup only** - Do NOT dump all `fle://api/manual/{tool}` pages at startup. Only read specific manuals (`fle://api/manual/{method}`) when using an unfamiliar method for the first time.
+3. **Initialize workspace (first run only)** - If `log.md` or `TODO.md` do not exist yet, create them along with `notes/`, `bugs/`, and `references/`.
+
 
 **DO NOT SKIP THESE STEPS. Reading documentation FIRST will save you from countless errors.**
 
@@ -1383,3 +1383,15 @@ REMEMBER:
   - **Advanced Oil:** Build in `8 Refineries : 2 Heavy->Light : 7 Light->Petroleum` ratios with circuit-controlled cracking pumps.
   - **Rocket Silo:** Always equip the Rocket Silo with `4x productivity-module-3` before launching to cut rocket part costs by ~28%.
 - **Main Bus & Belt Stacking:** Leave a **2-tile gap** between every 4-belt bus group for underground belts. Once stack inserters are unlocked (`enable-all-feature-flags`), stack bus lanes up to 4 items high (`60 items/s` on yellow belts) instead of adding duplicate parallel belts.
+
+### Anti-Timeout & Action Execution Rules (CRITICAL)
+- **Keep `execute()` calls atomic and short:** Never chain long walks (`>60` tiles), large manual harvests (`>15` items), or long `sleep()` calls inside a single `execute()` block. Split multi-step builds into separate, small `execute()` calls.
+- **Cap `sleep()` duration:** Never call `sleep()` for more than `15` seconds at a time. If waiting for research or crafting, check progress in 10–15 second increments.
+- **Recover from RCON timeouts immediately:** If an `execute()` call returns a timeout error, call `reconnect()` first, inspect `fle://status` to see which entities were already placed before the timeout, and never blindly re-run the exact same timed-out script without checking state.
+
+### Waypoint Movement, Starter Mall & Late-Game Efficiency (MANDATORY)
+- **Chunk long walks into 40-tile waypoints:** NEVER call `move_to()` to a target more than `40` tiles away in a single call—long pathfinding blocks the server tick loop and causes Docker RCON timeouts. Always interpolate intermediate waypoints every `35–40` tiles.
+- **Cap manual harvesting:** Never call `harvest_resource()` with `quantity > 10` in a single `execute()` call. Once electric drills are active, NEVER hand-mine ore or coal again.
+- **Build a Starter Mall before Blue Science:** Before scaling Chemical (Blue) science, build a small automated Mall assembling `transport-belt`, `underground-belt`, `splitter`, `inserter`, `fast-inserter`, `assembling-machine-2`, `small-electric-pole` / `medium-electric-pole`, and `pipe` into capped wooden/iron chests (limit chest slots to 1–2 stacks). Stop hand-crafting buildings once the Mall is running.
+- **Compact `execute()` outputs:** Never print entire entity lists or large dictionaries inside `execute()`. Print only `OK` confirmations, coordinates, and key counts (`len(...)`, item totals) so stdio output stays under 15 lines per call.
+- **Sub-Agent Delegation:** For complex multi-machine blocks (circuits, oil refining, 45 SPM science arrays), invoke `.claude/agents/factorio-spatial-reasoning-agent.md` to verify tile coordinates before calling `execute()`.

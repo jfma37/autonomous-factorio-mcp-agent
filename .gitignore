@@ -1,2 +1,12 @@
-.idea/
-.idea/*
+﻿.env
+.venv/
+__pycache__/
+*.pyc
+mods/*.zip
+mods/mod-settings.dat
+scenarios/
+*.zip
+.fle/
+config/config/
+
+.claude-code/
