@@ -95,6 +95,27 @@ Wooden chests: iron (-18.5,-31.5), copper (-17.5,-20.5).
 - Underground exit: place with the reversed direction, then `rotate_entity` to the travel direction.
 - Inventory fills up around 3000 iron + 1000 coal.
 
+# 2026-11-26 - Session 4: Green science (FLE tag `run2_green_science`)
+**Copper tap** (no splitter): inserters (-23.5,-18.5/-17.5) onto belt x=-24.5, underground y=-15.5/-12.5,
+then y=-10.5 west to x=-28.5, north into (-28.5,-11.5).
+**Mixed belt** (iron + copper lanes): from (-28.5,-12.5) east, x=-26.5 south (underground y=-11.5/-9.5) to y=19.5,
+west to x=-44.5, north to y=7.5, east to -31.5 (underground x=-43.5/-41.5).
+**Circuits**: y=10.5: circuit -39.5, cable -35.5, circuit -31.5; output belt y=13.5 eastward.
+**Mid row** y=16.5: belt asm -39.5, gear -35.5, inserter asm -31.5.
+**Product belt**: x=-28.5 up to y=5.5, west to -67.5; belt asm output via x=-42.5.
+**Green asm** y=2.5, x=-47.5..-67.5 (step 4); output y=-0.5 east, underground x=-27.5/-25.5,
+up x=-24.5, side-loads red belt at (-23.5,-5.5).
+**Labs**: 12 (rows y=-2.5 and y=1.5, x=-20.5..-0.5).
+**Research done**: automation-2, advanced-material-processing. Queue empty.
+**Verified**: 6/6 green asm full output, 8/8 engines working.
+
+## Problems and fixes
+- Splitter hung the MCP server (get_entities bug); patched in `.venv` (get_entities/client.py). The patch loads
+  only after an MCP restart; one unused splitter is in inventory. MCP restart wipes the world: restore a tag.
+- `restore` unpairs underground belts built in earlier states: pick up the exit, place it reversed, rotate.
+- An inserter placed before its destination machine stays stuck: pick it up and re-place it.
+- Keep execute() to about 8 actions (CLAUDE.md).
+
 ## Manual maintenance (until electric inserters)
 - 30 output-side burner inserters (rows at y=-36.5 / -25.5, plus chest inserters) cannot refuel from plates.
   Loaded with ~25-30 coal each; refill about every 20 min of game time.

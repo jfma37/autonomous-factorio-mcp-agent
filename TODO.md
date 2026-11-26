@@ -7,7 +7,9 @@ title: TODO - Vanilla 2.0 Rocket Launch (target 45 SPM, see references/pro_ratio
   - [x] Stone drills electric
   - [ ] Expansion past 4 boilers: move coal belt column x=14.5 east first
 - [x] Phase 3: electric drills on iron/copper/stone, 6 labs, automated red science (~30 SPM capacity)
-  - [ ] Set a research target (queue is empty after steel-processing)
+  - [ ] Set a research target (queue is empty after advanced-material-processing)
+- [x] Green science (6 assemblers, 12 labs, ~30 SPM capacity)
+  - [ ] Check underground belt pairs after any restore
 - [ ] Phase 4: extend furnace columns to 24+ (room westward needs copper ore belt moved from x=-31.5)
 - [ ] Phase 5: Starter Mall (before blue science)
 - [ ] Phase 6: green science, oil, blue/purple/yellow science (45 SPM)
