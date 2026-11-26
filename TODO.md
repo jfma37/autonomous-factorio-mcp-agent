@@ -10,6 +10,9 @@ title: TODO - Vanilla 2.0 Rocket Launch (target 45 SPM, see references/pro_ratio
   - [ ] Set a research target (queue is empty after advanced-material-processing)
 - [x] Green science (6 assemblers, 12 labs, ~30 SPM capacity)
   - [ ] Check underground belt pairs after any restore
+- [x] Power expanded to 8 boilers / 16 engines
+- [~] Starter mall v1: belt, inserter, gear, pipe
+  - [ ] Add underground belt, splitter, fast inserter, poles; AM2 after steel furnaces
 - [ ] Phase 4: extend furnace columns to 24+ (room westward needs copper ore belt moved from x=-31.5)
 - [ ] Phase 5: Starter Mall (before blue science)
 - [ ] Phase 6: green science, oil, blue/purple/yellow science (45 SPM)

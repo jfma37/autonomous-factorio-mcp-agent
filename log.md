@@ -116,6 +116,18 @@ up x=-24.5, side-loads red belt at (-23.5,-5.5).
 - An inserter placed before its destination machine stays stuck: pick it up and re-place it.
 - Keep execute() to about 8 actions (CLAUDE.md).
 
+# 2026-11-26 - Session 5: Power 14.4 MW + mall v1 (FLE tag `run2_mall_v1`)
+**Power**: 8 boilers x=-2.5,0.5,4.5,7.5,11.5,14.5,18.5,21.5 (y=27), 16 engines (y=23.5/18.5);
+pipes (2.5/9.5/16.5, 27.5); poles y=21.5 incl. x=16.5, 23.5. Room for 20 boilers per pump.
+**Coal belt** now: x=14.5 down to y=3.5, east to x=25.5, down to y=29.5, west to -2.5.
+**Coal drills**: 6 (added (46.5,-85.5), pole (46.5,-82.5)).
+**Mall** (chests prefilled with plates/coal so output is capped):
+- belts chest (-40.5,13.5), 200 max; inserter chest (-30.5,13.5), 100 max
+- gear asm (-37.5,22.5) -> chest (-37.5,25.5), 200 max
+- pipe asm (-31.5,22.5) -> chest (-31.5,25.5), 200 max
+Not yet in mall: underground belt, splitter, fast inserter, AM2, poles (steel needed for AM2).
+**Research**: fast-inserter done; now `engine` (fluid-handling failed to start).
+
 ## Manual maintenance (until electric inserters)
 - 30 output-side burner inserters (rows at y=-36.5 / -25.5, plus chest inserters) cannot refuel from plates.
   Loaded with ~25-30 coal each; refill about every 20 min of game time.
