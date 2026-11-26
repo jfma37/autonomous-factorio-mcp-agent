@@ -1395,3 +1395,5 @@ REMEMBER:
 - **Build a Starter Mall before Blue Science:** Before scaling Chemical (Blue) science, build a small automated Mall assembling `transport-belt`, `underground-belt`, `splitter`, `inserter`, `fast-inserter`, `assembling-machine-2`, `small-electric-pole` / `medium-electric-pole`, and `pipe` into capped wooden/iron chests (limit chest slots to 1–2 stacks). Stop hand-crafting buildings once the Mall is running.
 - **Compact `execute()` outputs:** Never print entire entity lists or large dictionaries inside `execute()`. Print only `OK` confirmations, coordinates, and key counts (`len(...)`, item totals) so stdio output stays under 15 lines per call.
 - **Sub-Agent Delegation:** For complex multi-machine blocks (circuits, oil refining, 45 SPM science arrays), invoke `.claude/agents/factorio-spatial-reasoning-agent.md` to verify tile coordinates before calling `execute()`.
+
+- **Max 8 actions per `execute()` call:** Never place or connect more than 8 entities (belts/inserters/splitters/machines) in a single `execute()` script. Split larger lines into 2–3 quick calls so each `execute()` finishes in under 15 seconds.
