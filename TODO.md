@@ -2,10 +2,11 @@
 title: TODO - Vanilla 2.0 Rocket Launch (target 45 SPM, see references/pro_ratios.md)
 ---
 - [x] Phase 1: burner mining + stone furnace smelting (iron, copper), coal belt
-- [ ] Phase 2: steam power (pump near water (-14,34); coal belt extension), 1:20:40 block ratio
-  - [ ] Replace output burner inserters with electric inserters (ends hand refuelling)
-  - [ ] Automate stone drill fuel
-- [ ] Phase 3: electric drills, labs, red science
+- [x] Phase 2: steam power (4 boilers / 8 engines of the 20/40 block)
+  - [x] Output burner inserters replaced with electric
+  - [ ] Automate stone drill fuel (replace with electric drill in Phase 3)
+  - [ ] Expansion past 4 boilers: move coal belt column x=14.5 east first
+- [ ] Phase 3: electric drills on iron/copper/stone, labs, automated red science (electric drill tech done)
 - [ ] Phase 4: extend furnace columns to 24+ (room westward needs copper ore belt moved from x=-31.5)
 - [ ] Phase 5: Starter Mall (before blue science)
 - [ ] Phase 6: green science, oil, blue/purple/yellow science (45 SPM)
